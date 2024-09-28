@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  api_service:
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - kata-net
+    environment:
+      - spring.datasource.url=jdbc:mysql://mysqldb:3306/ecommerce?allowPublicKeyRetrieval=true
+    depends_on:
+      - mysqldb
+  mysqldb:
+    image: "mysql:8.0"
+    restart: always
+    ports:
+      - 3306:3306
+    networks:
+      - kata-net
+    environment:
+      MYSQL_DATABASE: ecommerce
+      MYSQL_USER: kata
+      MYSQL_PASSWORD: passw0rd
+      MYSQL_ROOT_PASSWORD: passw0rd
+networks:
+  kata-net:
