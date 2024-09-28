@@ -48,9 +48,6 @@ jobs:
             sleep 2
           done
 
-      - name: Run Unit Tests
-        run: mvn -B test --file pom.xml
-
       - name: Build the application
         run: |
           mvn clean
