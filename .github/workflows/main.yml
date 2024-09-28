@@ -49,7 +49,7 @@ jobs:
           done
 
       - name: Build the application
-        working-directory: ./E-commerce/E-commerce
+        working-directory: E-commerce\Ecommerce
         run: |
           mvn clean
           mvn -B package --file pom.xml
