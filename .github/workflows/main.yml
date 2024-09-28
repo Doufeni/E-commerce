@@ -17,6 +17,7 @@ jobs:
         env:
           MYSQL_USER: kata
           MYSQL_PASSWORD: passw0rd
+          MYSQL_ROOT_PASSWORD: passw0rd
           MYSQL_DB: ecommerce
         ports:
           - 3306:3306
