@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      postgres:
+      mysql:
         image: mysql:8.0
         env:
-          POSTGRES_USER: kata
-          POSTGRES_PASSWORD: passw0rd
-          POSTGRES_DB: ecommerce
+          MYSQL_USER: kata
+          MYSQL_PASSWORD: passw0rd
+          MYSQL_DB: ecommerce
         ports:
           - 3306:3306
         options: >-
