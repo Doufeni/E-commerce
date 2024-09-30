@@ -44,18 +44,18 @@ They have no priority between them, you can implement the ones you are intereste
 
 #### REST API
 - [X] Propose an HTTP REST API to interact with the services implemented in the MVP
-- Implement HATEOAS principles in your REST API
+- [ ] Implement HATEOAS principles in your REST API
 - [X] Document the REST API
-- Secure the API
-- Use a non-blocking solution
+- [ ] Secure the API
+- [ ] Use a non-blocking solution
 
 #### Persistence
 - [X] Propose a data persistence solution
-- Propose a cache solution
+- [ ] Propose a cache solution
 
 #### Stream
-- Propose a data streaming solution
-- Propose a solution for consuming and/or producing events
+- [ ] Propose a data streaming solution
+- [ ] Propose a solution for consuming and/or producing events
 
 ### CI/CD
 - [X] Propose a CI/CD system for the project
@@ -63,5 +63,5 @@ They have no priority between them, you can implement the ones you are intereste
 
 ### Packaging
 - [X] Create a container of your application
-- Deploy your application in a pod
-- Create a native image of your application... (The response was truncated because it has reached the token limit. Try to increase the token limit if you need a longer response.)
+- [ ] Deploy your application in a pod
+- [ ] Create a native image of your application... (The response was truncated because it has reached the token limit. Try to increase the token limit if you need a longer response.)
