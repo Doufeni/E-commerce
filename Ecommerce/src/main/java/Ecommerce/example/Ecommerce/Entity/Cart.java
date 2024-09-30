@@ -8,18 +8,25 @@ import lombok.NoArgsConstructor;
 import java.util.HashSet;
 import java.util.Set;
 
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class products {
+public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
-    private String title;
+    private String customerName;
 
-    @ManyToMany(mappedBy = "products")
-    private Set<Cart> carts = new HashSet<>();
+    @ManyToMany
+    @JoinTable(
+            name = "cart_products",
+            joinColumns = @JoinColumn(name = "cart_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    private Set<products> products = new HashSet<>();
+
 }
