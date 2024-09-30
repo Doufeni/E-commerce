@@ -15,7 +15,6 @@ public class CartServiceImpl {
     @Autowired
     public CartRepository cartRepository;
 
-
     public Cart createCart(Cart cart) {
         return cartRepository.save(cart);
     }

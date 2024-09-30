@@ -20,4 +20,7 @@ public class Customer {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cart_id", referencedColumnName = "id")
     private Cart cart;
+
+    @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
+    private CustomerOrder customerOrder;
 }
