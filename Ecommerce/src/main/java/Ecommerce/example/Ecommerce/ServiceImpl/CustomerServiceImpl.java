@@ -45,8 +45,6 @@ public class CustomerServiceImpl {
                     .orElseThrow(() -> new RuntimeException("Product not found"));
 
             product.setAvailable_quantity(product.getAvailable_quantity() - 1);
-
-            cart.setCustomerName(customer.getFirstName());
             cart.getProducts().add(product);
             return cartRepository.save(cart);
         }  catch (Exception e) {
