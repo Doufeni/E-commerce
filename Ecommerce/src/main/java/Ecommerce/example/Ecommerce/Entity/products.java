@@ -1,5 +1,6 @@
 package Ecommerce.example.Ecommerce.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +20,8 @@ public class products {
     private Long Id;
 
     private String title;
+
+    private Integer available_quantity;
 
     @ManyToMany(mappedBy = "products")
     private Set<Cart> carts = new HashSet<>();

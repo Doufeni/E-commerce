@@ -1,5 +1,7 @@
 package Ecommerce.example.Ecommerce.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,14 +21,13 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String customerName;
-
     @ManyToMany
     @JoinTable(
             name = "cart_products",
             joinColumns = @JoinColumn(name = "cart_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
+    @JsonIgnore
     private Set<products> products = new HashSet<>();
 
 

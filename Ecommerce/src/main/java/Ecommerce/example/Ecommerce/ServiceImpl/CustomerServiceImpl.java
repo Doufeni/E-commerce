@@ -6,12 +6,14 @@ import Ecommerce.example.Ecommerce.Entity.products;
 import Ecommerce.example.Ecommerce.Repository.CartRepository;
 import Ecommerce.example.Ecommerce.Repository.CustomerRepository;
 import Ecommerce.example.Ecommerce.Repository.ProductRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Slf4j
 public class CustomerServiceImpl {
 
     public CustomerRepository customerRepository;
@@ -41,6 +43,9 @@ public class CustomerServiceImpl {
             }
             products product = productRepository.findById(productId)
                     .orElseThrow(() -> new RuntimeException("Product not found"));
+
+            product.setAvailable_quantity(product.getAvailable_quantity() - 1);
+
             cart.setCustomerName(customer.getFirstName());
             cart.getProducts().add(product);
             return cartRepository.save(cart);
@@ -59,6 +64,11 @@ public class CustomerServiceImpl {
         }
         products product = productRepository.findById(productId)
                 .orElseThrow(() -> new RuntimeException("Product not found"));
+
+        product.setAvailable_quantity(product.getAvailable_quantity() + 1);
+
+        log.info(" product " + product);
+        log.info(" cart.getProducts() " + cart.getProducts());
         if (!cart.getProducts().remove(product)) {
             throw new RuntimeException("Product not found in cart");
         }
