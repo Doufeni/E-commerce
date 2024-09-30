@@ -12,19 +12,14 @@ import java.util.List;
 @Service
 public class CartServiceImpl {
 
-    private CartRepository cartRepository;
+    @Autowired
+    public CartRepository cartRepository;
 
-    public CartServiceImpl(CartRepository cartRepository){
-        this.cartRepository = cartRepository;
-    }
 
     public Cart createCart(Cart cart) {
         return cartRepository.save(cart);
     }
 
-    public List<Cart> getAllCarts() {
-        return cartRepository.findAll();
-    }
    public Cart getCartById(Long id) {
        return cartRepository.findById(id)
                .orElseThrow(() -> new RuntimeException("Cart not found"));

@@ -40,17 +40,6 @@ public class CartController {
         return ResponseEntity.status(CREATED).body(createdCart);
     }
 
-    @Operation(summary = "Get all carts")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "List of carts",
-                    content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = Cart.class))})
-    })
-    @GetMapping
-    public ResponseEntity<List<Cart>> getAllCarts() {
-        List<Cart> carts = cartServiceImpl.getAllCarts();
-        return ResponseEntity.ok(carts);
-    }
 
     @Operation(summary = "Get a cart by ID")
     @ApiResponses(value = {
