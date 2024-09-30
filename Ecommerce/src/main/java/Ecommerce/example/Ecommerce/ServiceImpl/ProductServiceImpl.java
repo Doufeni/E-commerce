@@ -24,4 +24,20 @@ public class ProductServiceImpl {
                 .collect(Collectors.toList());
 
     }
+
+    public products createProduct(products product) {
+        return productRepository.save(product);
+    }
+
+    public void deleteProduct(Long productId) {
+        products product = productRepository.findById(productId)
+                .orElseThrow(() -> new RuntimeException("Product not found"));
+
+        if (!product.getCarts().isEmpty()) {
+            throw new RuntimeException("Product is associated with one or more carts and cannot be deleted.");
+        }
+
+        productRepository.delete(product);
+    }
+
 }
