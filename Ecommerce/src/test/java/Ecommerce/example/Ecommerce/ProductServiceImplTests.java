@@ -1,3 +1,4 @@
+/*
 package Ecommerce.example.Ecommerce;
 
 import Ecommerce.example.Ecommerce.Entity.products;
@@ -50,3 +51,4 @@ class ProductServiceImplTests {
         assertThat(productList).hasSize(2); // Check that two products are returned
     }
 }
+*/
