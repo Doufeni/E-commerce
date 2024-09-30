@@ -66,6 +66,16 @@ public class CartController {
         return ResponseEntity.ok(cart);
     }
 
+    @Operation(summary = "Delete a cart by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Cart deleted successfully"),
+            @ApiResponse(responseCode = "404", description = "Cart not found")
+    })
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCartById(@PathVariable Long id) {
+        cartServiceImpl.deleteCartById(id);
+        return ResponseEntity.ok().build();
+    }
     @Operation(summary = "Add a product to a cart")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Product added to cart",

@@ -30,12 +30,16 @@ public class CartServiceImpl {
                .orElseThrow(() -> new RuntimeException("Cart not found"));
     }
 
-    public Cart addProductToCart(Long cartId, products products) {
+    public Cart addProductToCart(Long cartId, products product) {
         Cart cart = cartRepository.findById(cartId).orElseThrow(() -> new RuntimeException("Cart not found"));
-        cart.getProducts().add(products);
+        cart.getProducts().add(product);
         return cartRepository.save(cart);
     }
 
-    // Other methods...
+    public void deleteCartById(Long id) {
+        Cart cart = cartRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Cart not found"));
+        cartRepository.delete(cart);
+    }
 }
 
