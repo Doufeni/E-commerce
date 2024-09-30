@@ -9,8 +9,6 @@ Pour déployer le projet il faut suivre ces deux étapes:
 
 2- lancer les commmande 'docker compose build' puis 'docker compose up -d'
 
-**If you are missing some information, make a choice and stick to it.**
-
 ### Constraints
 - Spring-boot 3.x.x
 - Java 21
