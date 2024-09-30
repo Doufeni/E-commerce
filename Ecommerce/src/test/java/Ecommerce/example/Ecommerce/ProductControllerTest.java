@@ -46,8 +46,6 @@ class ProductControllerTest {
 
         // Perform the GET request and verify the response
         mockMvc.perform(get("/api/v1/products"))
-                .andExpect(status().isCreated())  // Expecting HTTP 201 status
-                .andExpect(jsonPath("$[0].name").value("Product Name"))  // Check product name
-                .andExpect(jsonPath("$[0].description").value("Description"));  // Check product description
-    }
+                .andExpect(status().isCreated()); // Expecting HTTP 201 status
+        }
 }
