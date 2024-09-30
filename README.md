@@ -4,7 +4,9 @@
 Pour répondre au besoin fonctionelle j'ai utilisé springBoot comme technologie BackEnd. Pour tester et documenter les api j'ai ajouter swagger. 
 L'application permet à l'utilisatuer d'ajouter des produits et les supprimer de son panier il paut notamment lancer une commande.
 Pour déployer le projet il faut suivre ces deux étapes:
+
   1- cloner le projet
+  
   2- lancer les commmande 'docker compose build' puis 'docker compose up -d'
 
 **If you are missing some information, make a choice and stick to it.**
