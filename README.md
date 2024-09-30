@@ -1,8 +1,11 @@
 # 🛒 Online Shopping - a Kata
 
 ## Instructions
-The exercise is made of a mandatory part, the [Minimum Valuable Product](#mvp), and [bonus features](#features-bonus) to make the most of your remaining time and stand out.\
-The stories have no acceptance criteria, it's up to you to define them after your functional analysis of the story.
+Pour répondre au besoin fonctionelle j'ai utilisé springBoot comme technologie BackEnd. Pour tester et documenter les api j'ai ajouter swagger. 
+L'application permet à l'utilisatuer d'ajouter des produits et les supprimer de son panier il paut notamment lancer une commande.
+Pour déployer le projet il faut suivre ces deux étapes:
+  1- cloner le projet
+  2- lancer les commmande 'docker compose build' puis 'docker compose up -d'
 
 **If you are missing some information, make a choice and stick to it.**
 
