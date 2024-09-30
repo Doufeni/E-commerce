@@ -1,4 +1,3 @@
-/*
 package Ecommerce.example.Ecommerce;
 
 import static org.mockito.Mockito.*;
@@ -31,15 +30,12 @@ class ProductControllerTest {
     @Mock
     private ProductServiceImpl productServiceImpl;
 
-    @InjectMocks
-    private ProductController productController;
-
     private List<products> productList;
 
     @BeforeEach
     void setUp() {
         productList = new ArrayList<>();
-        products product = new products("Product Name");
+        products product = new products();
         productList.add(product);
     }
 
@@ -55,4 +51,3 @@ class ProductControllerTest {
                 .andExpect(jsonPath("$[0].description").value("Description"));  // Check product description
     }
 }
-*/

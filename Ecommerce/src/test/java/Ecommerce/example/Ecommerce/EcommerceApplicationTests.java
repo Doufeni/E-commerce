@@ -1,4 +1,3 @@
-/*
 package Ecommerce.example.Ecommerce;
 
 import org.junit.jupiter.api.Test;
@@ -12,4 +11,3 @@ class EcommerceApplicationTests {
 	}
 
 }
-*/
